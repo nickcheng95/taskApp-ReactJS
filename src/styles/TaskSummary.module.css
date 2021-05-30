@@ -1,0 +1,40 @@
+.summary{
+    background-color: #eeeeee;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    padding: 10px 20% 26px 20%;
+    align-items: center;
+}
+
+.summary p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 12px 0 16px;
+}
+
+.button{
+    border: none;
+    background-color: #003f9c;
+    color: #e6e6e6;
+    padding: 10px 16px 10px 16px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 6px;
+    margin-top: 16px;
+    text-decoration: none;
+}
+
+.profile{
+    font-size: 26px;
+    border: none;
+    background-color: #003f9c;
+    color: #e6e6e6;
+    padding: 10px 16px 10px 16px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 6px;
+    margin-top: 16px;
+    text-decoration: none;
+}

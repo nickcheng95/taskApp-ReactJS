@@ -1,0 +1,24 @@
+.home{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/bg.jpg');
+}
+
+.home-info{
+
+    padding: 16px 26px 16px 26px;
+    background-color: #3b3b3b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    color: white;
+}
+
+.home-info h1{
+    margin-right: 16px;
+}

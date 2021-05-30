@@ -1,0 +1,37 @@
+.task{
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #a3a3a3;
+    padding: 8px 26px 8px 26px;
+    border-top: none;
+    transition: background .2s ease;
+    text-decoration: none;
+    color: rgb(49, 49, 49);
+    font-weight: bold;
+    
+}
+
+.task:hover{
+    background: #dbdbdb;
+}
+
+.task-title{
+    font-size: 20px;
+    background-color: rgba(158, 158, 158, 0.534);
+    padding: 16px 16px 16px;
+    border: 1px solid #a3a3a3;
+    margin-top: 26px;
+
+}
+
+.task-notasks{
+    font-size: 26px;
+    text-align: center;
+    border: 1px solid #a3a3a3;
+    border-top: none;
+    padding: 26px 0 26px;
+    margin-top: 0;
+
+}
+

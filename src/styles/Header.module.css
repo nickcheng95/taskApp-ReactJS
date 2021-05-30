@@ -1,0 +1,29 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+    padding: 10px 20% 10px 20%;
+    background-color: rgba(58, 0, 134, 0.884);
+}
+
+.button{
+    border: none;
+    background: none;
+    color: #e6e6e6;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}   
+
+.title{
+    border: none;
+    background: none;
+    color: #e6e6e6;
+    font-size: 2.3rem;
+    margin: 16px 0 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}   

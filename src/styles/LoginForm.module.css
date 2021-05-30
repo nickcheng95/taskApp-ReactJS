@@ -1,0 +1,49 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    padding: 20px;
+    width: 16.25rem;
+}
+
+.form button{
+    background-color: #3b007e;
+    color: #ebebeb;
+    border: none;
+    width: 50%;
+    margin-bottom: 16px;
+    padding: 12px;
+    margin-left: 22%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form label{
+    font-size: 20px;
+    justify-content: left;
+    margin-bottom: 8px;
+}
+
+.form input{
+    margin-bottom: 16px;
+    padding: 8px 0 8px 6px;
+    width: 90%;
+}
+
+.link{
+    text-decoration: none;
+    color: #ebebeb;
+    cursor: default;
+    pointer-events: none;
+}
+
+.link-signup{
+    text-decoration: underline;
+    color: #e45b00;
+    cursor: pointer;
+    pointer-events:initial;
+    font-weight: bold;
+    font-size: 17px;
+
+}
