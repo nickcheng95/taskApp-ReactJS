@@ -25,3 +25,14 @@ export const updateUserPassword = (auth,password) => {
         body: {password: password}
     }).then()
 }
+
+export const updateUser = (auth,updates) => {
+    database({
+        url: `/users/me`,
+        headers: {
+            'Authorization': `Bearer ${auth.token}` 
+        },
+        method: 'PATCH',
+        body: updates
+    }).then()
+}
