@@ -41,3 +41,18 @@ export const authLogout = (auth) => {
     localStorage.removeItem('task-app_JWT')
     return {type: 'LOGOUT'}
 }
+
+export const signupUser = async(info) => {
+    const response = await database({
+        url: `/users`,
+        method: 'POST',
+        body: info
+    })
+
+    localStorage.setItem('task-app_JWT',response.token)
+    return {
+        type: 'LOGIN',
+        token: response.token
+    }
+
+}

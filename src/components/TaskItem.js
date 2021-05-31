@@ -6,7 +6,7 @@ const TaskItem = ({description,completed,_id}) => {
     return (
         <Link className={classes['task']} to={`/tasks/${_id}`}>
             <p>{description}</p>
-            <p>{completed? 'Completed √' : 'Not Completed ×'}</p>
+            <p>{completed === true ? 'Completed √' : 'Not Completed ×'}</p>
         </Link>
     )
 }

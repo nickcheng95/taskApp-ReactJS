@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import classes from '../styles/SignupPage.module.css'
+import validator from 'validator'
+import {signupUser} from '../action/auth'
+import AuthContext from '../context/authContext'
 
+const SignupPage = (props) => {
+    const [email, setEmail] = useState('')
+    const [password,setPassword] = useState('')
+    const [name, setName] = useState('')
+    const [age, setAge] = useState('')
+    const {authDispatch} = useContext(AuthContext)
 
-const SignupPage = () => {
     const formSubmit = (e) => {
         e.preventDefault()
-        const data = {
-            name: 'ccc',
-            email: 'ccc@aaa.com',
-            password: 'asdasdadwad'
+        
+        const emailValidation = validator.isEmail(email)
+        const nameValidation = name.trim() !== ''
+        const passwordValidation = password.trim().length > 6 && !password.toLowerCase().includes('password')
+
+        if(!emailValidation || !nameValidation || !passwordValidation){
+            return
         }
-        console.log(JSON.stringify(data))
-        fetch('https://task-manager-nodejsapp.herokuapp.com/users',{
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then((response)=>{
-            return response.json()
-        }).then((res)=>{console.log(res)}).catch(e=>console.log(e.message))
+        
+        const data = {
+            name,
+            email,
+            password,
+            age: age ? age : 0
+        }
+
+        signupUser(data).then((res)=>{
+            authDispatch(res)
+            props.history.push('/')
+        })
+
     }
     
     return (
@@ -28,13 +42,13 @@ const SignupPage = () => {
                 <h2>Create an account to manager your tasks</h2>
                 <form onSubmit={formSubmit} className={classes['form-form']}>
                     <label>Email</label>
-                    <input type='text'></input>
+                    <input type='text' onChange={(e)=>setEmail(e.target.value)}></input>
                     <label>Password</label>
-                    <input type='password' ></input>
+                    <input type='password' onChange={(e)=>setPassword(e.target.value)}></input>
                     <label>Name</label>
-                    <input type='text' ></input>
+                    <input type='text' onChange={(e)=>setName(e.target.value)}></input>
                     <label>Age (optional)</label>
-                    <input type='text' ></input>
+                    <input type='number' onChange={(e)=>setAge(e.target.value)}></input>
                     <button type='submit'>Sign Up</button>
                 </form>
             </div>          
